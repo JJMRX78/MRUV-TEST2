@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simulador MRUV</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Simulador de MRUV</h1>
+
+  <div class="controls">
+    <h2>Auto 1</h2>
+    <label>Velocidad inicial (v₀): <input type="number" id="v0_1" value="0" /></label>
+    <label>Aceleración (a): <input type="number" id="a_1" value="1" /></label>
+
+    <h2>Auto 2</h2>
+    <label>Velocidad inicial (v₀): <input type="number" id="v0_2" value="0" /></label>
+    <label>Aceleración (a): <input type="number" id="a_2" value="2" /></label>
+
+    <div>
+      <label>Tiempo (s): <input type="number" id="t" value="0" disabled /></label>
+    </div>
+
+    <button onclick="startSimulation()">Iniciar</button>
+    <button onclick="togglePause()">Pausar</button>
+    <button onclick="resetSimulation()">Reiniciar</button>
+  </div>
+
+  <div class="ruler">
+    <div class="mark" style="left: 0%;">0 m</div>
+    <div class="mark" style="left: 25%;">25 m</div>
+    <div class="mark" style="left: 50%;">50 m</div>
+    <div class="mark" style="left: 75%;">75 m</div>
+    <div class="mark" style="left: 100%;">100 m</div>
+  </div>
+
+  <div class="track">
+    <div class="car" id="car1">🚗</div>
+    <div class="car" id="car2">🚙</div>
+  </div>
+
+  <div id="results"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
